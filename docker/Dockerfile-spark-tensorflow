@@ -1,6 +1,5 @@
 FROM ubuntu:16.04
 MAINTAINER Hardik Patel <hardikgw@gmail.com>
-
 ENV\
 	SPARK_VER=2.0.0 \
 	TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/gpu/tensorflow-0.10.0rc0-py2-none-any.whl
@@ -12,7 +11,6 @@ RUN\
 	tar -xvzf spark-${SPARK_VER}-bin-hadoop2.7.tgz &&\
 	ln -s spark-${SPARK_VER}-bin-hadoop2.7 spark &&\
 	rm spark-${SPARK_VER}-bin-hadoop2.7.tgz &&\
-	apt-get install python-pip python-dev &&\ 
 	apt-get install -y python-pip python-dev &&\
 	pip install --ignore-installed --upgrade ${TF_BINARY_URL}
 CMD	/bin/bash
