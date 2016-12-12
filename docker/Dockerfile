@@ -17,6 +17,7 @@ RUN	apt-get install -y python-numpy python-scipy python-matplotlib ipython ipyth
 RUN	apt-get install -y python-dev python-pip g++ libopenblas-dev git
 RUN pip install spaCy &&\
 	python -m spacy.en.download all
+RUN pip install pyLDAvis
 RUN pip install gensim
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 CMD ["/bin/bash"]
