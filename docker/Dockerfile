@@ -15,5 +15,7 @@ RUN	curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
 RUN	apt-get update && sudo apt-get install bazel
 RUN	apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
 RUN	apt-get install -y python-dev python-pip g++ libopenblas-dev git
+RUN pip install spacy &&\
+	python -m spacy.en.download all
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 CMD ["/bin/bash"]
