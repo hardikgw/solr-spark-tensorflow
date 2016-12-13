@@ -21,5 +21,12 @@ RUN pip install pyLDAvis
 RUN pip install gensim
 RUN pip install nltk
 RUN pip install bokeh
+WORKDIR /
+RUN touch start.sh &&\
+	chmod 755 start.sh &&\
+	echo "#!/bin/sh" >> start.sh &&\
+	echo "nohup ./run_jupyter.sh &'" >> start.sh &&\
+	echo "nohup tensorboard --logdir=/opt/logs &'" >> start.sh
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
-CMD ["/bin/bash"]
+EXPOSE 6006 8888
+CMD ["./start.sh"]
