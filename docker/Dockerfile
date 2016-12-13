@@ -20,5 +20,6 @@ RUN pip install spaCy &&\
 RUN pip install pyLDAvis
 RUN pip install gensim
 RUN pip install nltk
+RUN pip install bokeh
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 CMD ["/bin/bash"]
