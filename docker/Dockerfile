@@ -19,5 +19,6 @@ RUN pip install spaCy &&\
 	python -m spacy.en.download all
 RUN pip install pyLDAvis
 RUN pip install gensim
+RUN pip install nltk
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 CMD ["/bin/bash"]
