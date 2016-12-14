@@ -28,7 +28,7 @@ RUN mkdir /opt/logs && \
 	echo "#!/bin/sh" >> start.sh && \
 	echo "nohup ./run_jupyter.sh &'" >> start.sh && \
 	echo "nohup tensorboard --logdir=/opt/logs &'" >> start.sh && \
-	tail -f nohup.out
+	echo "tail -f nohup.out" >> start.sh
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 EXPOSE 6006 8888
 CMD ["./start.sh"]
