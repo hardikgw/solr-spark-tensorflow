@@ -1,7 +1,7 @@
 # TensorFlow with Spark processing and Solr data
 ### Running Tensorflow on Docker (for model validation)
 
-`run -itd --name=tf -p 8888:8888 -p 6006:6006 -v $(pwd)/search-py:/home gcr.io/tensorflow/tensorflow /bin/sh`
+`sudo docker run -d --name=tf -p 8888:8888 -p 6006:6006 -v $(pwd)/data:/home/data cithub/tf`
 #### Options
 - "-itd" : interactive terminal demon
 - "-p 8888:8888" : Jupyter
