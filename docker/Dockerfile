@@ -21,6 +21,7 @@ RUN pip install pyLDAvis
 RUN pip install gensim
 RUN pip install nltk
 RUN pip install bokeh
+RUN pip install -U scikit-learn
 WORKDIR /
 RUN mkdir /opt/logs && \
 	touch start.sh && \
