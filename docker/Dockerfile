@@ -17,10 +17,7 @@ RUN	apt-get install -y python-numpy python-scipy python-matplotlib ipython ipyth
 RUN	apt-get install -y python-dev python-pip g++ libopenblas-dev git
 RUN pip install spaCy &&\
 	python -m spacy.en.download all
-RUN pip install pyLDAvis
-RUN pip install gensim
-RUN pip install nltk
-RUN pip install bokeh
+RUN pip install pyLDAvis scipy scipy gensim nltk bokeh
 RUN pip install -U scikit-learn
 WORKDIR /
 RUN mkdir /opt/logs && \
