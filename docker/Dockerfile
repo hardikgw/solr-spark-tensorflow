@@ -1,12 +1,12 @@
 FROM gcr.io/tensorflow/tensorflow:latest-py3
+WORKDIR /
 RUN \
-  echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-  add-apt-repository -y ppa:webupd8team/java && \
-  apt-get update && \
-  apt-get install -y oracle-java8-installer && \
-  rm -rf /var/lib/apt/lists/* && \
-  rm -rf /var/cache/oracle-jdk8-installer
-RUN \
+	echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
+  	add-apt-repository -y ppa:webupd8team/java && \
+  	apt-get update && \
+  	apt-get install -y oracle-java8-installer && \
+  	rm -rf /var/lib/apt/lists/* && \
+  	rm -rf /var/cache/oracle-jdk8-installer && \
 	apt-get update &&\
 	apt-get install software-properties-common && \
 	apt-get install -y wget curl vim bash-completion unzip && \
@@ -20,9 +20,8 @@ RUN \
 	pip install pyLDAvis scipy scipy gensim nltk bokeh && \
 	pip install -U scikit-learn && \
 	apt-get update && \
-	apt-get clean
-WORKDIR /
-RUN mkdir /opt/logs && \
+	apt-get clean && \
+ 	mkdir /opt/logs && \
 	touch start.sh && \
 	chmod 755 start.sh && \
 	echo "#!/bin/sh" >> start.sh && \
