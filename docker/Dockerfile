@@ -19,6 +19,8 @@ RUN pip install spaCy &&\
 	python -m spacy.en.download all
 RUN pip install pyLDAvis scipy scipy gensim nltk bokeh
 RUN pip install -U scikit-learn
+RUN apt-get update
+RUN apt-get clean
 WORKDIR /
 RUN mkdir /opt/logs && \
 	touch start.sh && \
