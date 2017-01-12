@@ -16,7 +16,7 @@ RUN	apt-get update && sudo apt-get install bazel
 RUN	apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
 RUN	apt-get install -y python-dev python-pip g++ libopenblas-dev git
 RUN pip install spaCy &&\
-	python -m spacy.en.download all
+	python3 -m spacy.en.download all
 RUN pip install pyLDAvis scipy scipy gensim nltk bokeh
 RUN pip install -U scikit-learn
 RUN apt-get update
