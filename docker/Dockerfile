@@ -1,4 +1,4 @@
-FROM gcr.io/tensorflow/tensorflow:latest-py3
+FROM gcr.io/tensorflow/tensorflow:latest
 WORKDIR /
 RUN \
 	echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
